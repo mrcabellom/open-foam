@@ -7,4 +7,4 @@ apt-get install rpcbind
 apt-get -y install openmpi-bin openmpi-common openssh-client openssh-server
 sed -i -e 's/Defaults    requiretty.*/ #Defaults    requiretty/g' /etc/sudoers
 apt-get install mmv
-service nfs-kernel-server start 
+service nfs-kernel-server start
