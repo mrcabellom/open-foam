@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #Command script to run on all nodes as Azure Batch node start task, to install prerequisites etc.
 apt-get update
-apt-get install nfs-kernel-server
 apt-get install nfs-common
+apt-get install nfs-kernel-server
 apt-get install rpcbind
 systemctl enable rpcbind
 systemctl enable nfs-kernel-server
