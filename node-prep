@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 #Command script to run on all nodes as Azure Batch node start task, to install prerequisites etc.
 export DEBIAN_FRONTEND="noninteractive"
-apt-get update
-apt-get install nfs-common
-apt-get install nfs-kernel-server
-apt-get install rpcbind
+apt-get -y update
+apt-get -y install nfs-common
+apt-get -y install nfs-kernel-server
 systemctl enable rpcbind
 systemctl enable nfs-kernel-server
 apt-get -y install openmpi-bin openmpi-common openssh-client openssh-server
 sed -i -e 's/Defaults    requiretty.*/ #Defaults    requiretty/g' /etc/sudoers
-apt-get install mmv
+apt-get -y install mmv
 service nfs-kernel-server start
